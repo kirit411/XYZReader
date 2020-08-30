@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.example.xyzreader"
+        minSdkVersion 28
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+
+    def androidSupportVersion = "1.0.0"
+
+    implementation files('libs/volley.jar')
+    implementation fileTree(dir: 'libs', includes: ['*.jar'])
+    //implementation 'com.android.volley:volley:1.1.0'
+    implementation "androidx.appcompat:appcompat:1.2.0"
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "com.squareup.okhttp3:okhttp:4.6.0"
+    implementation "androidx.legacy:legacy-support-v4:$androidSupportVersion"
+    implementation "androidx.legacy:legacy-support-v13:$androidSupportVersion"
+    implementation "androidx.palette:palette:$androidSupportVersion"
+    implementation "androidx.cardview:cardview:$androidSupportVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
+    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
